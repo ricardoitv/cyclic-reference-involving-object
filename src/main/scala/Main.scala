@@ -2,7 +2,8 @@ import software.amazon.awssdk.auth.credentials.WebIdentityTokenFileCredentialsPr
 import java.nio.file.Paths
 
 object Main extends App {
-  WebIdentityTokenFileCredentialsProvider.builder
+  val builder = WebIdentityTokenFileCredentialsProvider.builder
+  builder
     .roleArn("dummy")
     .roleSessionName("Dummy")
     .webIdentityTokenFile(Paths.get("."))
